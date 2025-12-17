@@ -8,9 +8,9 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ## 🏗️ Data Architecture (Medallion Framework)
 
-Dự án áp dụng nguyên tắc **Separation of Concerns (SoC)** để tổ chức dữ liệu theo các lớp có chất lượng tăng dần:
+The project implements the **Separation of Concerns (SoC)** principle to organize data into layers of increasing quality and refinement:
 
-| Tiêu chí | 🥉 **Bronze Layer** | 🥈 **Silver Layer** | 🥇 **Gold Layer** |
+| Category | 🥉 **Bronze Layer** | 🥈 **Silver Layer** | 🥇 **Gold Layer** |
 | :--- | :--- | :--- | :--- |
 | **Definition** | Raw, unprocessed data as-is from sources | Clean & standardized data | Business-Ready data |
 | **Objective** | Traceability & Debugging | (Intermediate Layer) Prepare Data for Analysis | Provide data to be consumed for reporting & Analytics |
