@@ -1,45 +1,53 @@
 # 🏛️ Data Warehouse and Analytics Project
 
 Welcome to the **Data Warehouse and Analytics Project** repository! 🚀
-
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a robust data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics using the **Medallion Architecture**.
+This project demonstrates an end-to-end **Data Warehousing & Analytics** solution — from ingesting raw data to delivering business-ready insights. Built as a **portfolio project**, it showcases industry best practices in **Data Engineering** and **Analytics** using the **Medallion Architecture**.
 
 ---
 
 ## 🏗️ Data Architecture (Medallion Framework)
 
-The project implements the **Separation of Concerns (SoC)** principle to organize data into layers of increasing quality and refinement:
+The project follows the **Separation of Concerns (SoC)** principle by organizing data into layers with increasing quality, structure, and business value:
 
-| Category | 🥉 **Bronze Layer** | 🥈 **Silver Layer** | 🥇 **Gold Layer** |
-| :--- | :--- | :--- | :--- |
-| **Definition** | Raw, unprocessed data as-is from sources | Clean & standardized data | Business-Ready data |
-| **Objective** | Traceability & Debugging | (Intermediate Layer) Prepare Data for Analysis | Provide data to be consumed for reporting & Analytics |
-| **Object Type** | Tables | Tables | Views |
-| **Load Method** | Full Load (Truncate & Insert) | Full Load (Truncate & Insert) | None |
-| **Data Transformation** | None (as-is) | • Data **Cleaning** <br> • Data **Standardization** <br> • Data **Normalization** <br> • **Derived** Columns <br> • Data **Enrichment** | • Data **Integration** <br> • Data **Aggregation** <br> • **Business Logic** & Rules |
-| **Data Modeling** | None (as-is) | None (as-is) | • **Star Schema** <br> • **Aggregated** Objects <br> • **Flat Tables** |
-| **Target Audience** | • Data Engineers | • Data Analysts <br> • Data Engineers | • Data Analysts <br> • Business Users |
-
-
+| Category                | 🥉 **Bronze Layer**                                      | 🥈 **Silver Layer**                                                                                                                         | 🥇 **Gold Layer**                                                                      |
+| :---------------------- | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------- |
+| **Definition**          | Raw, unprocessed data ingested as-is from source systems | Cleaned and standardized data                                                                                                               | Curated, business-ready data                                                           |
+| **Objective**           | Traceability & Debugging                                 | Prepare high-quality data for analysis                                                                                                      | Enable reporting & advanced analytics                                                  |
+| **Object Type**         | Tables                                                   | Tables                                                                                                                                      | Views                                                                                  |
+| **Load Method**         | Full Load (Truncate & Insert)                            | Full Load (Truncate & Insert)                                                                                                               | None                                                                                   |
+| **Data Transformation** | None (as-is)                                             | • Data **Cleaning**  <br> • Data **Standardization**  <br> • Data **Normalization**  <br> • **Derived** Columns  <br> • Data **Enrichment** | • Data **Integration**  <br> • Data **Aggregation**  <br> • **Business Logic** & Rules |
+| **Data Modeling**       | None (as-is)                                             | None (as-is)                                                                                                                                | • **Star Schema**  <br> • **Aggregated** Objects  <br> • **Flat Tables**               |
+| **Target Audience**     | • Data Engineers                                         | • Data Engineers  <br> • Data Analysts                                                                                                      | • Data Analysts  <br> • Business Users                                                 |
 
 ---
 
 ## 🚀 Project Requirements
 
-### 1. Building the Data Warehouse (Data Engineering)
-* **Objective**: Develop a modern data warehouse using **SQL Server** to consolidate sales data.
-* **Specifications**:
-    * **Data Sources**: Import data from two source systems (**ERP** and **CRM**) provided as CSV files.
-    * **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-    * **Integration**: Combine both sources into a single, user-friendly data model.
-    * **Scope**: Focus on the latest dataset; historization is not required for this version.
-    * **Documentation**: Clear documentation of the data model for stakeholders.
+### 1️⃣ Building the Data Warehouse (Data Engineering)
 
-### 2. BI: Analytics & Reporting (Data Analysis)
-* **Objective**: Develop SQL-based analytics to deliver detailed insights into:
-    * 👤 **Customer Behavior**
-    * 📦 **Product Performance**
-    * 📈 **Sales Trends**
+**Objective**
+Develop a modern **Data Warehouse** using **SQL Server** to consolidate and prepare sales data for analytics.
+
+**Specifications**:
+
+* **📥 Data Sources**: Import data from two operational systems (**ERP** and **CRM**) provided as CSV files.
+* **🧹 Data Quality**: Clean, validate, and resolve data quality issues prior to analysis.
+* **🔗 Data Integration**: Merge ERP and CRM data into a single, unified data model.
+* **🎯 Scope**: Focus on the latest snapshot of data (no historization in this version).
+* **📘 Documentation**: Provide clear and accessible documentation for technical and business stakeholders.
+
+---
+
+### 2️⃣ BI: Analytics & Reporting (Data Analysis)
+
+**Objective**
+Develop **SQL-based analytical queries** to generate insights in the following areas:
+
+* 👤 **Customer Behavior**
+* 📦 **Product Performance**
+* 📈 **Sales Trends**
+
+These insights are designed to support decision-making by analysts and business users.
 
 ---
 
@@ -48,26 +56,64 @@ The project implements the **Separation of Concerns (SoC)** principle to organiz
 ```text
 data-warehouse-project/
 │
-├── 📁 datasets/                # Raw datasets (ERP and CRM data)
+├── 📁 datasets/                 # Raw source datasets (ERP & CRM)
 │
-├── 📁 docs/                    # Architecture & Documentation
-│   ├── etl.drawio              # ETL techniques and methods
-│   ├── data_architecture.drawio # Project's high-level architecture
-│   ├── data_catalog.md         # Metadata & field descriptions
-│   ├── data_flow.drawio        # Data flow diagram
-│   ├── data_models.drawio      # Star Schema & Data Models
-│   └── naming-conventions.md   # Guidelines for tables & columns
+├── 📁 docs/                     # Architecture & documentation
+│   ├── etl.drawio               # ETL techniques and methods
+│   ├── data_architecture.drawio # High-level system architecture
+│   ├── data_catalog.md          # Metadata & field definitions
+│   ├── data_flow.drawio         # End-to-end data flow diagram
+│   ├── data_models.drawio       # Star schema & data models
+│   └── naming-conventions.md    # Table & column naming standards
 │
-├── 📁 scripts/                 # SQL Transformation Scripts
-│   ├── 🥉 bronze/              # Scripts for extracting and loading raw data
-│   ├── 🥈 silver/              # Scripts for cleaning and transforming data
-│   └── 🥇 gold/                # Scripts for creating analytical models
+├── 📁 scripts/                  # SQL scripts by data layer
+│   ├── 🥉 bronze/               # Raw data ingestion scripts
+│   ├── 🥈 silver/               # Data cleaning & transformation scripts
+│   └── 🥇 gold/                 # Analytical & business models
 │
-├── 📁 tests/                   # Data quality & SQL test scripts
+├── 📁 tests/                    # Data quality checks & SQL tests
 │
-├── README.md                   # Project overview
-├── LICENSE                     # License information
-└── requirements.txt            # Project dependencies
+├── README.md                    # Project overview
+├── LICENSE                      # License information
+└── requirements.txt             # Project dependencies
+```
+
+---
+
+## 🛠️ Tech Stack
+
+* **Database**: SQL Server
+* **Data Modeling**: Star Schema, Medallion Architecture
+* **Tools**: SQL, Draw.io, Git
+
+---
+
+## 📖 How to Use
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone <your-repo-url>
+   ```
+
+2. **Execute SQL scripts** in the following order:
+
+   ```text
+   🥉 Bronze ➡️ 🥈 Silver ➡️ 🥇 Gold
+   ```
+
+3. **Review documentation**:
+
+   * Refer to `docs/data_catalog.md` for detailed metadata and field descriptions.
+   * Explore Draw.io diagrams for architecture, ETL, and data models.
+
+---
 
 ## 🛡️ License
-This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
+
+This project is licensed under the **MIT License**.
+You are free to **use**, **modify**, and **share** this project with proper attribution.
+
+---
+
+✨ *If you find this project useful, feel free to star ⭐ the repository!*
