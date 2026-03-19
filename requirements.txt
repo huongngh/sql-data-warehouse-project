@@ -1,0 +1,25 @@
+# ============================================
+# Data Warehouse and Analytics Project
+# Requirements & Environment Dependencies
+# ============================================
+
+# --- Database ---
+# SQL Server 2019 or later (https://www.microsoft.com/en-us/sql-server)
+# SQL Server Management Studio (SSMS) 19+ or Azure Data Studio
+
+# --- Diagramming ---
+# Draw.io Desktop (https://github.com/jgraph/drawio-desktop/releases)
+# Used for: docs/data_flow.drawio
+
+# --- Version Control ---
+# Git 2.x+ (https://git-scm.com/)
+
+# ============================================
+# Python (optional) — only if running scripts
+# to automate CSV import or data validation
+# ============================================
+
+pyodbc>=4.0.39          # SQL Server connection via ODBC
+pandas>=2.0.0           # CSV reading and data inspection
+sqlalchemy>=2.0.0       # ORM / DB connection utility
+python-dotenv>=1.0.0    # Manage environment variables (DB credentials)
