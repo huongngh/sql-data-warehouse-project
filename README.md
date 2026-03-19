@@ -59,7 +59,6 @@ data-warehouse-project/
 ├── 📁 datasets/                 # Raw source datasets (ERP & CRM)
 │
 ├── 📁 docs/                     # Architecture & documentation
-│   ├── etl.drawio               # ETL techniques and methods
 │   ├── data_architecture.drawio # High-level system architecture
 │   ├── data_catalog.md          # Metadata & field definitions
 │   ├── data_flow.drawio         # End-to-end data flow diagram
