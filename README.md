@@ -59,10 +59,10 @@ data-warehouse-project/
 ├── 📁 datasets/                 # Raw source datasets (ERP & CRM)
 │
 ├── 📁 docs/                     # Architecture & documentation
-│   ├── data_architecture.drawio # High-level system architecture
-│   ├── data_catalog.md          # Metadata & field definitions
 │   ├── data_flow.drawio         # End-to-end data flow diagram
-│   ├── data_models.drawio       # Star schema & data models
+│   ├── data_catalog.md          # Metadata & field definitions
+│   ├── data_flow.png            # End-to-end data flow diagram
+│   ├── data_model.png           # Star schema & data models
 │   └── naming-conventions.md    # Table & column naming standards
 │
 ├── 📁 scripts/                  # SQL scripts by data layer
@@ -92,7 +92,7 @@ data-warehouse-project/
 1. **Clone the repository**:
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/huongngh/sql-data-warehouse.git
    ```
 
 2. **Execute SQL scripts** in the following order:
